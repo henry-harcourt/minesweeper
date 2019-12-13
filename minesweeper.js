@@ -3,22 +3,22 @@ document.addEventListener('DOMContentLoaded', startGame)
 // Define your `board` object here!
 var board = {
   cells : [
-          {row : 0, col : 0, isMine : false, hidden: true, surroundingMines: 0},
-          {row : 0, col : 1, isMine : false, hidden: true, surroundingMines: 0},
-          {row : 0, col : 2, isMine : false, hidden: true, surroundingMines: 0},
-          {row : 0, col : 3, isMine : true, hidden: true, surroundingMines: 0},
-          {row : 1, col : 0, isMine : false, hidden: true, surroundingMines: 0},
-          {row : 1, col : 1, isMine : false, hidden: true, surroundingMines: 0},
-          {row : 1, col : 2, isMine : false, hidden: true, surroundingMines: 0},
-          {row : 1, col : 3, isMine : false, hidden: true, surroundingMines: 0},
-          {row : 2, col : 0, isMine : true, hidden: true, surroundingMines: 0},
-          {row : 2, col : 1, isMine : true, hidden: true, surroundingMines: 0},
-          {row : 2, col : 2, isMine : false, hidden: true, surroundingMines: 0},
-          {row : 2, col : 3, isMine : false, hidden: true, surroundingMines: 0},
-          {row : 3, col : 0, isMine : false, hidden: true, surroundingMines: 0},
-          {row : 3, col : 1, isMine : false, hidden: true, surroundingMines: 0},
-          {row : 3, col : 2, isMine : false, hidden: true, surroundingMines: 0},
-          {row : 3, col : 3, isMine : false, hidden: true, surroundingMines: 0}
+          {row : 0, col : 0, isMine : false, hidden: true, isMarked: false, surroundingMines: 0},
+          {row : 0, col : 1, isMine : false, hidden: true, isMarked: false, surroundingMines: 0},
+          {row : 0, col : 2, isMine : false, hidden: true, isMarked: false, surroundingMines: 0},
+          {row : 0, col : 3, isMine : true, hidden: true, isMarked: false, surroundingMines: 0},
+          {row : 1, col : 0, isMine : false, hidden: true, isMarked: false, surroundingMines: 0},
+          {row : 1, col : 1, isMine : false, hidden: true, isMarked: false, surroundingMines: 0},
+          {row : 1, col : 2, isMine : false, hidden: true, isMarked: false, surroundingMines: 0},
+          {row : 1, col : 3, isMine : false, hidden: true, isMarked: false, surroundingMines: 0},
+          {row : 2, col : 0, isMine : true, hidden: true, isMarked: false, surroundingMines: 0},
+          {row : 2, col : 1, isMine : true, hidden: true, isMarked: false, surroundingMines: 0},
+          {row : 2, col : 2, isMine : false, hidden: true, isMarked: false, surroundingMines: 0},
+          {row : 2, col : 3, isMine : false, hidden: true, isMarked: false, surroundingMines: 0},
+          {row : 3, col : 0, isMine : false, hidden: true, isMarked: false, surroundingMines: 0},
+          {row : 3, col : 1, isMine : false, hidden: true, isMarked: false, surroundingMines: 0},
+          {row : 3, col : 2, isMine : false, hidden: true, isMarked: false, surroundingMines: 0},
+          {row : 3, col : 3, isMine : false, hidden: true, isMarked: false, surroundingMines: 0}
         ] 
 
 }
@@ -49,7 +49,7 @@ function checkForWin () {
   for (var i = 0; i < board.cells.length; i++) {
     if (board.cells[i].isMine == true && board.cells[i].isMarked == false) {
     return }
-    if (board.cells[i].isMine == false && board.cells[i].hidden) {
+    if (board.cells[i].isMine == false && board.cells[i].hidden == true) {
     return }
   }
   // You can use this function call to declare a winner (once you've
